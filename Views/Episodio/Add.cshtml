@@ -1,0 +1,45 @@
+﻿@model VT_POO3.Models.Episodio
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+</head>
+<body>
+    <form method="post" asp-controller="episodio" asp-action="add">
+        <table>
+            <tr>
+                <td>Id</td>
+                <td>
+                    <input type="text" asp-for="Id" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>Nome</td>
+                <td>
+                    <input type="text" asp-for="Nome" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>Temporada</td>
+                <td>
+                    <input type="number" asp-for="Temporada" min="0" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>Nota</td>
+                <td>
+                    <input type="number" asp-for="Nota" min="0" max="10" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="submit" value="Save" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿@model VT_POO3.Models.Serie
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+</head>
+<body>
+    <form method="post" asp-controller="serie" asp-action="add">
+        <table>
+            <tr>
+                <td>Id</td>
+                <td>
+                    <input type="text" asp-for="Id" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>Nome</td>
+                <td>
+                    <input type="text" asp-for="Nome" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>Autor</td>
+                <td>
+                    <input type="text" asp-for="Autor"  required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>Criadora</td>
+                <td>
+                    <input type="text" asp-for="Criadora" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="submit" value="Save" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿@model VT_POO3.Models.Serie
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edite</title>
+</head>
+<body>
+    <form method="post" asp-controller="serie" asp-action="edite">
+        <table>
+            <tr>
+                <td>Nome</td>
+                <td>
+                    <input type="text" asp-for="Nome" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>Autor</td>
+                <td>
+                    <input type="text" asp-for="Autor"  required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>Criadora</td>
+                <td>
+                    <input type="text" asp-for="Criadora"  required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="submit" value="Save" />
+                    <input type="hidden" asp-for="Id" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

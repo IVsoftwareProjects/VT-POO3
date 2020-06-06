@@ -1,0 +1,58 @@
+﻿@model VT_POO3.Models.Serie
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h3>Lista de Episodio</h3>
+    <a asp-controller="episodio" asp-action="add">Add Episodio</a>
+    <h3>Lista de Serie</h3>
+    <a asp-controller="serie" asp-action="add">Add Serie</a>
+
+    <table border="1" cellpadding="2" cellspacing="2">
+
+        
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Autor</th>
+                <th>Criadora</th>
+                <th>Ação</th>
+            </tr>
+            @foreach (var serie in ViewBag.series)
+            {
+
+
+
+                <tr>
+                    <td>@serie.Id</td>
+                        <td>
+                            <a asp-controller="episodio" asp-action="Index_2">
+                                @serie.Nome
+                            </a>
+                        </td>
+                 
+                        <td>@serie.Autor</td>
+                        <td>@serie.Criadora</td>
+                        <td>
+
+                            <a asp-controller="serie" asp-action="edite" asp-route-id="@serie.Id"
+                               onclick="return confirm('')"> Edite</a>
+                            <a asp-controller="serie" asp-action="delete" asp-route-id="@serie.Id"
+                               onclick="return confirm('Voce esta certo disso?')"> Delete</a>
+                        </td>
+</tr>
+
+            }
+    </table>
+
+</body>
+</html>
