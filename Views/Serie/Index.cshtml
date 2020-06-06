@@ -3,7 +3,6 @@
     ViewData["Title"] = "Home Page";
 }
 
-
 <!DOCTYPE html>
 
 <html>
@@ -12,46 +11,40 @@
     <title>Index</title>
 </head>
 <body>
-    <h3>Lista de Episodio</h3>
-    <a asp-controller="episodio" asp-action="add">Add Episodio</a>
-    <h3>Lista de Serie</h3>
+    <h1>Visualizar a explicação do Trabalho na guia "Descrição do trabalho!"</h1>
+    <br>
+    <h3>Lista séries e adiciona novas ao clicar no link "add series" </h3>
     <a asp-controller="serie" asp-action="add">Add Serie</a>
-
+    <h4>Lista de series click no mome da série e visualize seus episódios</h4>
     <table border="1" cellpadding="2" cellspacing="2">
-
-        
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Autor</th>
+            <th>Criadora</th>
+            <th>Ação</th>
+        </tr>
+        @foreach (var serie in ViewBag.series)
+        {
             <tr>
-                <th>Id</th>
-                <th>Nome</th>
-                <th>Autor</th>
-                <th>Criadora</th>
-                <th>Ação</th>
+                <td>@serie.Id</td>
+                <td>
+                    <a asp-controller="episodio" asp-action="Index_2">
+                        @serie.Nome
+                    </a>
+                </td>
+
+                <td>@serie.Autor</td>
+                <td>@serie.Criadora</td>
+                <td>
+                    <a asp-controller="serie" asp-action="edite" asp-route-id="@serie.Id"
+                       onclick="return confirm('')"> Edite</a>
+                    <a asp-controller="serie" asp-action="delete" asp-route-id="@serie.Id"
+                       onclick="return confirm('Voce esta certo disso?')"> Delete</a>
+                </td>
             </tr>
-            @foreach (var serie in ViewBag.series)
-            {
 
-
-
-                <tr>
-                    <td>@serie.Id</td>
-                        <td>
-                            <a asp-controller="episodio" asp-action="Index_2">
-                                @serie.Nome
-                            </a>
-                        </td>
-                 
-                        <td>@serie.Autor</td>
-                        <td>@serie.Criadora</td>
-                        <td>
-
-                            <a asp-controller="serie" asp-action="edite" asp-route-id="@serie.Id"
-                               onclick="return confirm('')"> Edite</a>
-                            <a asp-controller="serie" asp-action="delete" asp-route-id="@serie.Id"
-                               onclick="return confirm('Voce esta certo disso?')"> Delete</a>
-                        </td>
-</tr>
-
-            }
+        }
     </table>
 
 </body>

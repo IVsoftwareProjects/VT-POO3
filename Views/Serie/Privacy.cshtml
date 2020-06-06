@@ -1,8 +1,56 @@
 ﻿@model VT_POO3.Models.Serie
 
 @{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Descrição do Trabalho";
 }
-<h1>@ViewData["Title"]</h1>
+<h1>@ViewData["Trabalho da disciplina POOIII"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<p> &nbsp; O nosso trabalho foi implementado utilizando os conceitos do MVC, Entity FrameWork e banco de dados Mysql.</p>
+<br>
+A camada Model:
+<br>
+<p>
+    &nbsp; &nbsp; O nosso projeto representa uma aplicação para admistrar episódios de uma série.<br>
+    realizado com a criação de dois CRUD's,. Na aplicação do MVC, nós criamos na camada Model as
+    classes que representam toda a nossa regra de negócio, onde tambem é feita uma tabela para
+    o mapeamento com o banco de dados que e feito utilando recursos do EntityFrameWork e também
+    na camada Model, fica a classe de configuração de contexto do mapeamento chamada DataContext.
+    No caso desta aplicação nós temos duas classes principais na camada Model a classe Series e A
+    classe episódio ambas são entidades pricipais da aplicação e armazenam as principais propriedades
+    da aplicação.
+</p>
+<br>
+A camada Controller:
+<br>
+<p>
+    &nbsp; &nbsp;Camada responsável por fazer o processamento dos dados, comunicando-se tanto com a
+    camada Model tanto com a camada View. Nesta aplicação a camada controller possui três classes
+    "AddController, EpisodioController e SerieController" a AddController aqui tem um mero papel de
+    acionar à sua respectiva view para que essa realize o renderizamento do formulário de cadastro
+    o processamento deste formulário no entanto fica a cargo das classes EpisodioController e
+    SerieController.
+</p>
+<br>
+A camada View:
+<br>
+<p>
+    &nbsp; &nbsp;É a camada responsável por mostrar na tela as informações desejadas, sejam elas
+    requisitadas pelo usuário ou respondidas pela aplicação. No desta aplicação, nós temos na camada
+    View 2 subcamadas a primeira chamada "Episodio" e a segunda "Serie" ambas possuem seus respectivos
+    Controllers, essas subcamadas possuem classes semelhantes que são: "Add, Edite, Index, Privacy "
+    nas duas subcamadas a classe Index é a responsável renderizar primeiro. Na view também encontramos
+    a subcamada chama Shared, ela tem objetivo de fornecer o layout da página que será compartilhado em
+    toda à aplicação.
+</p>
+
+<br>
+Executando a aplicação:
+<br>
+<p>
+    &nbsp; &nbsp;Ao inciar a aplicação é apresenta a tela home, onde é mostrada uma lista das séries que, 
+    estão armazenadas em banco de dados, ao clicar num nome da série a aplicação é redirecionada para 
+    outra página contendo uma lista de todos  os episódios desta série. Na página Home, também é possível 
+    realizar as seguintes ações: novas inserções de séries no banco de dados(clicando no botão add), editar, 
+    atualizá-la e excluir uma série. Essas mesmas funções são disponibilizadas na página de episódios onde 
+    assim como a página de séries possui um CRUD que, permiter realizar estás operações. 
+</p>
